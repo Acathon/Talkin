@@ -52,7 +52,7 @@ public class MainActivity extends ActionBarActivity {
     private boolean connected;
     private String Texto = null;
     private MessageArrayAdapter adapter;
-    private MessageArrayAdapterRight adapterR;
+    //private MessageArrayAdapterRight adapterR;
     private int var = 0;
     private String contactName;
     private String displayName;
@@ -125,9 +125,9 @@ public class MainActivity extends ActionBarActivity {
                 displayName = extra_username.getDisplayname();
                 Toast.makeText(getApplicationContext(), "Welcome " + displayName + " to the group", Toast.LENGTH_SHORT).show();
                 adapter = new MessageArrayAdapter(getApplicationContext(), R.layout.activity_main_item_message);
-                adapterR = new MessageArrayAdapterRight(getApplicationContext(), R.layout.activity_main_item_right_message);
+                //adapterR = new MessageArrayAdapterRight(getApplicationContext(), R.layout.activity_main_item_right_message);
                 listView.setAdapter(adapter);
-                listView.setAdapter(adapterR);
+                //listView.setAdapter(adapterR);
                 messengerReceive();
                 imageButton.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -138,9 +138,9 @@ public class MainActivity extends ActionBarActivity {
                             editText.requestFocus();
                         } else {
                             message = "@" + displayName + " " + editText.getText().toString();
-                            String localmessage = editText.getText().toString();
+                            //String localmessage = editText.getText().toString();
                             //Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
-                            adapterR.add(new MessageItem(false, localmessage));
+                            //adapterR.add(new MessageItem(false, localmessage));
                             messengerSend(message);
                             loader.setVisibility(View.VISIBLE);
                         }
@@ -168,7 +168,7 @@ public class MainActivity extends ActionBarActivity {
             adapter = new MessageArrayAdapter(getApplicationContext(), R.layout.activity_main_item_message);
             //adapter = ListHelper.buildViewHolderAdapter(this, android.R.layout.simple_list_item_1,messengerReceive());
             listView.setAdapter(adapter);
-            listView.setAdapter(adapterR);
+            //listView.setAdapter(adapterR);
             //PhoneActivity.callListen();
             messengerReceive();
             imageButton.setOnClickListener(new View.OnClickListener() {
@@ -180,9 +180,9 @@ public class MainActivity extends ActionBarActivity {
                         editText.requestFocus();
                     } else {
                         message = " @" + displayName + " " + editText.getText().toString();
-                        String localmessage = editText.getText().toString();
+                        //String localmessage = editText.getText().toString();
                         //Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
-                        adapterR.add(new MessageItem(true, localmessage));
+                        //adapterR.add(new MessageItem(true, localmessage));
                         messengerSend(message);
 
 
