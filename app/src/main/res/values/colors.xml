@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#009688</color>
+    <color name="colorPrimaryDark">#00796B</color>
+    <color name="colorPrimaryLight">#C8FFBE</color>
+    <color name="colorAccent">#395E66</color>
+    <color name="SecondaryText">#B6B6B6</color>
+    <color name="btnNo">#FF1744</color>
+    <color name="btnYes">#00E676</color>
+    <color name="white">#FFFFFF</color>
+    <color name="teal50">#e0f2f1</color>
+    <color name="black">#000000</color>
+</resources>

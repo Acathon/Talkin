@@ -1,0 +1,91 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context="indie.pfe.talkin.PhoneCallActivity">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/call_out"
+        android:textAlignment="gravity"
+        android:textColor="@android:color/white"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtCalling"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="Mustapha"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="italic" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtCalling"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/ic_call_made_white_48dp" />
+
+    <Chronometer
+        android:id="@+id/chrono"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/llCalloptions"
+        android:layout_marginBottom="30dp"
+        android:gravity="center_horizontal"
+        android:textColor="@android:color/white"
+        android:textSize="22sp"
+
+        android:visibility="invisible" />
+
+    <LinearLayout
+        android:id="@+id/llCalloptions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnEndCall"
+        android:layout_marginBottom="20dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/setSpeakers"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/circle_trans"
+            android:src="@drawable/ic_volume_up_white_24dp" />
+
+        <ImageButton
+            android:id="@+id/setMic"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/circle_trans"
+            android:src="@drawable/ic_mic_white_24dp" />
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/btnEndCall"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentRight="false"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:background="#F44336"
+        android:padding="10dp"
+        android:src="@drawable/ic_call_end_white_24dp" />
+
+</RelativeLayout>

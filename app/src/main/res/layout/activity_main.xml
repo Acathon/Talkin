@@ -1,0 +1,103 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context="indie.pfe.talkin.MainActivity">
+
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar" />
+
+    <ListView
+        android:id="@+id/listMessages"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/app_bar"
+        android:layout_gravity="top"
+        android:layout_marginBottom="48dip"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        android:stackFromBottom="true"
+        android:transcriptMode="alwaysScroll"
+        android:visibility="invisible" />
+
+    <LinearLayout
+        android:id="@+id/linear14"
+        android:layout_width="match_parent"
+        android:layout_height="42dip"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="5dp"
+        android:orientation="horizontal"
+        android:padding="0dp">
+
+        <EditText
+            android:id="@+id/txtMsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="10"
+            android:hint="@string/write_text_hint" />
+
+        <ImageButton
+            android:id="@+id/btnSend"
+            android:layout_width="39dp"
+            android:layout_height="39dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="0"
+
+            android:background="@drawable/circle_send"
+            android:src="@drawable/ic_send_white_24dp" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/FrameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/ifNotConnected"
+            android:textAlignment="gravity"
+            android:textAllCaps="true"
+            android:textColor="@color/SecondaryText"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="@string/ifNotConnectedHint"
+            android:textAlignment="gravity"
+            android:textAllCaps="true"
+            android:textColor="@color/SecondaryText"
+            android:textSize="9sp"
+            android:textStyle="normal" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/inProgress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/loader"
+            android:layout_width="48px"
+            android:layout_height="48px"
+            android:layout_gravity="center"
+            android:contentDescription="preloader"
+            android:src="@drawable/loader"
+            android:visibility="gone" />
+
+
+    </FrameLayout>
+</RelativeLayout>

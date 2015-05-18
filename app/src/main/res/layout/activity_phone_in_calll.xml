@@ -1,0 +1,123 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/inCallactivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context="indie.pfe.talkin.PhoneInCalllActivity">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/call_in"
+        android:textAlignment="gravity"
+        android:textColor="@android:color/white"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtCaller"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView3"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="Helmi"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="italic" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtCaller"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/ic_call_received_white_48dp" />
+
+    <LinearLayout
+        android:id="@+id/llin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="72dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <ImageButton
+            android:id="@+id/btnAcceptCall"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/circle_call_accept"
+            android:elevation="10dp"
+            android:src="@drawable/ic_call_white_36dp" />
+
+        <ImageButton
+            android:id="@+id/btnRejectCall"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/circle_call_reject"
+            android:elevation="10dp"
+            android:src="@drawable/ic_call_end_white_36dp" />
+
+    </LinearLayout>
+
+    <Chronometer
+        android:id="@+id/chrono"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/llCalloptions"
+        android:layout_marginBottom="30dp"
+        android:gravity="center_horizontal"
+        android:textColor="@android:color/white"
+        android:textSize="22sp"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/llCalloptions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnEndCall1"
+        android:layout_marginBottom="20dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <ImageButton
+            android:id="@+id/setSpeakers"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/circle_trans"
+            android:src="@drawable/ic_volume_up_white_24dp" />
+
+        <ImageButton
+            android:id="@+id/setMic"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/circle_trans"
+            android:src="@drawable/ic_mic_white_24dp" />
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/btnEndCall1"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentRight="false"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:background="#F44336"
+        android:padding="10dp"
+        android:src="@drawable/ic_call_end_white_24dp"
+        android:visibility="gone" />
+</RelativeLayout>

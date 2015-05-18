@@ -1,0 +1,90 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="indie.pfe.talkin.PhoneActivity">
+
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/app_bar">
+
+        <RadioGroup
+            android:id="@+id/contactList"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="50dp">
+
+
+        </RadioGroup>
+
+    </ScrollView>
+    <!--
+       <FrameLayout
+           android:id="@+id/frameLayout"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:layout_alignParentRight="true"
+           android:layout_alignParentTop="true">
+
+
+           <ImageButton
+               android:id="@+id/btnCall"
+               android:layout_width="70dp"
+               android:layout_height="70dp"
+               android:layout_gravity="right|bottom"
+               android:layout_margin="15dp"
+               android:background="@drawable/call"
+               android:src="@drawable/ic_phone_white_24dp" />
+
+           <com.melnykov.fab.FloatingActionButton
+               android:id="@+id/btnCall"
+               android:layout_width="70dp"
+               android:layout_height="70dp"
+               android:layout_gravity="bottom|end"
+               android:layout_margin="15dp"
+               android:src="@drawable/ic_phone_white_24dp"
+               fab:fab_colorNormal="@color/colorAccent"
+               fab:fab_colorPressed="@color/colorPrimary"
+               fab:fab_colorRipple="@color/colorPrimaryDark"
+               fab:fab_shadow="true" />
+           -->
+
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        fab:fab_addButtonColorNormal="@color/colorPrimaryDark"
+        fab:fab_addButtonPlusIconColor="@color/white">
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/callBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_call_white_24dp"
+            fab:fab_colorNormal="@color/colorPrimaryDark" />
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/refreshBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_refresh_white_24dp"
+            fab:fab_colorNormal="@color/colorPrimaryDark" />
+
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+    <!--
+        </FrameLayout>
+    -->
+</RelativeLayout>

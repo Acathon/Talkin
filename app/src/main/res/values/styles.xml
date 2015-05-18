@@ -1,0 +1,23 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="AppTheme.Base" />
+
+    <style name="AppTheme.Base" parent="Theme.AppCompat.Light">
+        <item name="windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="android:textViewStyle">@style/OpenFont</item>
+    </style>
+
+    <style name="PopupTheme.Base" parent="ThemeOverlay.AppCompat.Dark">
+        <item name="android:colorBackground">@color/colorPrimary</item>
+    </style>
+
+    <style name="OpenFont" parent="android:Widget.TextView">
+        <item name="android:fontFamily">OpenSans-Regular</item>
+    </style>
+
+</resources>
