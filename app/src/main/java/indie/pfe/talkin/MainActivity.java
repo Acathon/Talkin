@@ -58,22 +58,6 @@ public class MainActivity extends ActionBarActivity {
     private String displayName;
     private PhoneActivity phoneActivity;
 
-    public static String ipToString(int ip, boolean broadcast) {
-        String result = new String();
-        Integer[] address = new Integer[4];
-        for (int i = 0; i < 4; i++) {
-            address[i] = (ip >> 8 * i) & 0xFF;
-        }
-        for (int i = 0; i < 4; i++) {
-            if (i != 3) {
-                result = result.concat(address[i] + ".");
-            } else {
-                result = result.concat("255.");
-            }
-        }
-        return result.substring(0, result.length() - 1);
-    }
-
     @Override
     public void onBackPressed() {
         if (back_pressed + 2000 > System.currentTimeMillis()) super.onBackPressed();
@@ -243,92 +227,7 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void messengerReceive() {
-        Thread listener = new Thread(new Runnable() {
-            @Override
-            public void run() {
-
-                WifiManager wMan = (WifiManager) getSystemService(Context.WIFI_SERVICE);
-                if (wMan != null) {
-                    WifiManager.MulticastLock lock = wMan.createMulticastLock(TAG);
-                    lock.acquire();
-                }
-                byte[] buffer = new byte[BUFFER_SIZE];
-                final DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
-                MulticastSocket socket;
-                try {
-                    socket = new MulticastSocket(SOCKET_PORT);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                    return;
-                }
-                while (RECEIVER) {
-                    try {
-                        socket.receive(packet);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                        continue;
-                    }
-                    if (!RECEIVER)
-                        break;
-
-                    byte data[] = packet.getData();
-                    int i;
-                    for (i = 0; i < data.length; i++) {
-                        if (data[i] == '\0')
-                            break;
-                    }
-
-                    final String packetIp = packet.getAddress().toString();
-                    final long deviceIp = mWifi.getConnectionInfo().getIpAddress();
-                    final String ipDevice = String.valueOf(deviceIp);
-
-                    try {
-                        Texto = new String(data, 0, packet.getLength(), "UTF-8");
-                        //Toast.makeText(getApplicationContext(), Texto.toString(), Toast.LENGTH_LONG).show();
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                if (packetIp == ipDevice) {
-                                    //Toast.makeText(getApplicationContext(), packetIp+ " == " +ipDevice,Toast.LENGTH_LONG).show();
-                                    //adapter.add(new MessageItem(true, Texto.toString()));
-                                } else if (packetIp != ipDevice) {
-                                    //Toast.makeText(getApplicationContext(), packetIp+ " == " +ipDevice,Toast.LENGTH_LONG).show();
-                                    adapter.add(new MessageItem(true, Texto.toString()));
-                                }
-                            }
-                        });
-
-                    } catch (UnsupportedEncodingException e) {
-                        e.printStackTrace();
-                        continue;
-                    }
-                }
-            }
-        });
-        listener.start();
-    }
-
-    public boolean messengerSend(String message) throws IllegalArgumentException {
-        //Toast.makeText(getApplicationContext(), "im in", Toast.LENGTH_SHORT).show();
-        if (message == null || message.length() == 0)
-            throw new IllegalArgumentException();
-
-        if (iNet == null || !iNet.isConnected() || displayName == null) {
-            String alertMessage = "You must be Connected to a Wi-Fi in order to send your message";
-            final AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-            builder.setMessage(alertMessage).setTitle("Not connected to a Wi-Fi network");
-            builder.setNeutralButton("OK", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    dialog.dismiss();
-                }
-            });
-            return false;
-        } else {
-            new myTask().execute();
-
-        }
-        return true;
+        //...
     }
 
     private class myTask extends AsyncTask<Void, Void, Void> {
