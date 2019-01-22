@@ -55,11 +55,7 @@ public class ClientManager {
                     String notification = "BYE: " + name;
                     byte[] message = notification.getBytes();
                     DatagramSocket socket = new DatagramSocket();
-                    socket.setBroadcast(true);
-                    DatagramPacket packet = new DatagramPacket(message, message.length, broadcastIP, BROADCAST_PORT);
-                    socket.send(packet);
-                    socket.disconnect();
-                    socket.close();
+                    
                     return;
                 } catch (SocketException e) {
                     e.printStackTrace();
@@ -80,13 +76,7 @@ public class ClientManager {
                     byte[] message = request.getBytes();
                     DatagramSocket socket = new DatagramSocket();
                     socket.setBroadcast(true);
-                    DatagramPacket packet = new DatagramPacket(message, message.length, broadcastIP, BROADCAST_PORT);
-                    while (BROADCAST) {
-                        socket.send(packet);
-                        Thread.sleep(BROADCAST_INTERVAL);
-                    }
-                    socket.disconnect();
-                    socket.close();
+     
                     return;
                 } catch (SocketException e) {
                     e.printStackTrace();
