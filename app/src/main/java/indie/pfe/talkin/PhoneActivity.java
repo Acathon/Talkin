@@ -155,10 +155,7 @@ public class PhoneActivity extends ActionBarActivity {
                 alertDialog1.show();
                 return;
             } else {
-                HashMap<String, InetAddress> peers = contactManager.getContacts();
-                RadioGroup radioGroup = (RadioGroup) findViewById(R.id.contactList);
-                Toast.makeText(getApplicationContext(), "Available contacts :" + String.valueOf(peers.size()), Toast.LENGTH_LONG).show();
-                radioGroup.removeAllViews();
+                
                 for (String name : peers.keySet()) {
                     RadioButton radioButton = new RadioButton(getBaseContext());
                     radioButton.setText(name);
@@ -171,10 +168,7 @@ public class PhoneActivity extends ActionBarActivity {
                 radioGroup.clearCheck();
             }
         } else {
-            HashMap<String, InetAddress> peers = contactManager.getContacts();
-            RadioGroup radioGroup = (RadioGroup) findViewById(R.id.contactList);
-            Toast.makeText(getApplicationContext(), "Available contacts :" + String.valueOf(peers.size()), Toast.LENGTH_LONG).show();
-            radioGroup.removeAllViews();
+            
             for (String name : peers.keySet()) {
                 RadioButton radioButton = new RadioButton(getBaseContext());
                 radioButton.setText(name);
@@ -260,8 +254,7 @@ public class PhoneActivity extends ActionBarActivity {
             return true;
         }
         if (id == R.id.action_about) {
-            Toast.makeText(getApplicationContext(), "Application par Mustapha Essouri & Helmi Khamassi au cadre d'un projet fin des etudes 2015 au Polytech Centrale!", Toast.LENGTH_LONG).show();
-            return true;
+            
         }
         if (id == R.id.action_hotspot) {
             switch (var) {
